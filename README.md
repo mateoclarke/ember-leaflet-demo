@@ -8,6 +8,9 @@ It plots markers for different startups in the North East of England (chosen arb
 
 - Ember.js 1.0.0
 - Ember Data 1.0.0 beta 2
+- Handlebars.js 1.0.0 (Runtime)
+- jQuery 2.0.2
+- Leaflet.js 0.6.4
 - EmberLeaflet ~~(Ember.js 1.0.0 compatible, built from @codefox421’s fork, now merged)~~
 
 ## Build
