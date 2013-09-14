@@ -9,8 +9,12 @@ App.Startup = DS.Model.extend({
   location: function() {
     var latitude = this.get('latitude');
     var longitude = this.get('longitude');
-    
-    return L.latLng(latitude, longitude);
+
+    if (latitude === undefined || latitude === "" || longitude === undefined || longitude === "") {
+      return undefined
+    } else {
+      return L.latLng(latitude, longitude);
+    }
   }.property('latitude', 'longitude')
 });
 
