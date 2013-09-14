@@ -1,6 +1,28 @@
 <h1>New Startup</h1>
 
-<div>{{input value=name}}</div>
-<div>{{input value=latitude}}</div>
-<div>{{input value=longitude}}</div>
+<div>
+  <label>Name</label>
+  {{input value=name}}
+</div>
+
+<div>
+  <label>Homepage</label>
+  {{input value=url}}
+</div>
+
+<div>
+  <label>Logo URL</label>
+  {{input value=logoUrl}}
+</div>
+
+<div>
+  <label>Latitude</label>
+  {{input value=latitude}}
+</div>
+
+<div>
+  <label>Longitude</label>
+  {{input value=longitude}}
+</div>
+
 <button {{action 'save'}}>Submit</button>
