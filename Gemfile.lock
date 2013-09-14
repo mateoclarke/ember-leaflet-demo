@@ -1,0 +1,52 @@
+GIT
+  remote: git://github.com/livingsocial/rake-pipeline.git
+  revision: 65b1e744defa208e313703d89f3453447cc103b2
+  branch: master
+  specs:
+    rake-pipeline (0.8.0)
+      json
+      rake (~> 10.0.0)
+      thor
+
+GIT
+  remote: git://github.com/tchak/barber.git
+  revision: 6ebaeefaad44e16a1d6e47a8a126fe219f959457
+  branch: master
+  specs:
+    barber (0.4.2)
+      ember-source
+      execjs
+      handlebars-source
+
+GIT
+  remote: git://github.com/wycats/rake-pipeline-web-filters.git
+  revision: 31e8a1e779be4e928f510f6f4f481c58cd796800
+  specs:
+    rake-pipeline-web-filters (0.6.0)
+      rack
+      rake-pipeline (~> 0.6)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ember-source (1.0.0)
+      handlebars-source (= 1.0.12)
+    execjs (2.0.1)
+    handlebars-source (1.0.12)
+    json (1.8.0)
+    multi_json (1.8.0)
+    rack (1.5.2)
+    rake (10.0.4)
+    thor (0.18.1)
+    uglifier (2.1.1)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  barber!
+  rake-pipeline!
+  rake-pipeline-web-filters!
+  uglifier

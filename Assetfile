@@ -1,0 +1,46 @@
+require 'barber'
+require 'rake-pipeline-web-filters'
+
+# Helpers
+ember_handlebars_template_name = Proc.new do |input|
+  template_dirs = input.path.split("/")[1..-2]
+  template_file_name = File.basename(input.path, File.extname(input.path))
+  template_dirs.push(template_file_name).join("/")
+end
+
+VENDORED_LIBS = [
+  'jquery.js',
+  'moment.js',
+  'leaflet-src.js',
+  'handlebars.runtime.js',
+  'ember.js',
+  'ember-leaflet.js',
+  'ember-data.js'
+    ].map {|f| "vendor/#{f}" }
+
+# Pipeline
+output 'build'
+
+input 'app' do
+  match "templates/**/*.hbs" do
+    handlebars wrapper_proc: Barber::Ember::FilePrecompiler,
+        key_name_proc: ember_handlebars_template_name
+    concat "templates.js"
+  end
+
+  match "**/*.js" do
+    concat VENDORED_LIBS + ['templates.js', 'app.js', 'models/startup.js'], "app.js"
+  end
+
+  match "index.html" do
+    concat
+  end
+
+  match "stylesheets/*.css" do
+    concat "app.min.css"
+  end
+
+  match "images/*" do
+    concat
+  end
+end
