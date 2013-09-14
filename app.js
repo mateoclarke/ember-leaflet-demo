@@ -64577,7 +64577,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   rootElement: "#map"
 });
 
-L.Icon.Default.imagePath = "/images";
+L.Icon.Default.imagePath = "images";
 App.Startup = DS.Model.extend({
   latitude: DS.attr('string'),
   longitude: DS.attr('string'),
