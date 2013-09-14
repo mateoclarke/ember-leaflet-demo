@@ -1,9 +1,10 @@
 App.StartupsNewController = Ember.ObjectController.extend({
   actions: {
     save: function() {
-      var model = this.modelFor('startupsNew');
+      var self = this;
+      var model = this.get('content');
       model.save().then(function() {
-        this.transitionToRoute('startup', model);
+        self.transitionToRoute('startup', model);
       }, function() {
         alert('error');
       });
